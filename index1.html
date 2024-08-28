@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil1</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul id="menu">
+                <li><a href="index.html">Accueil</a></li> 
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Accueil</a></li> 
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Section de la bannière principale avec une image de fond -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue sur Notre Site</h1>
+                <p>Nous offrons des services de qualité pour répondre à vos besoins.</p>
+                <a href="services.html" class="btn-cta">Découvrez nos services</a>
+            </div>
+        </section>
+
+        <!-- Section présentant les services avec des images -->
+        <section class="services">
+            <h2>Nos Services</h2>
+            <div class="services-container">
+                <div class="service">
+                    <img src="image/istockphoto-1316711569-1024x1024.jpg" alt="Service 1">
+                    <h3>Service 1</h3>
+                    <p>Une brève description du service 1.</p>
+                </div>
+                <div class="service">
+                    <img src="image/pexels-photo-2102416.webp" alt="Service 2">
+                    <h3>Service 2</h3>
+                    <p>Une brève description du service 2.</p>
+                </div>
+                <div class="service">
+                    <img src="image/pexels-photo-6476808.jpeg" alt="Service 3">
+                    <h3>Service 3</h3>
+                    <p>Une brève description du service 3.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section des caractéristiques -->
+        <section class="features">
+            <div class="feature-item">
+                <h2>Feature 1</h2>
+                <p>Description de la feature 1.</p>
+            </div>
+            <div class="feature-item">
+                <h2>Feature 2</h2>
+                <p>Description de la feature 2.</p>
+            </div>
+            <div class="feature-item">
+                <h2>Feature 3</h2>
+                <p>Description de la feature 3.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Votre Entreprise</p>
+    </footer>
+
+    <script>
+        // JavaScript pour le menu mobile
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Animation des éléments lors du défilement
+        document.addEventListener('DOMContentLoaded', () => {
+            const featureItems = document.querySelectorAll('.feature-item');
+            const showOnScroll = () => {
+                featureItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const viewportHeight = window.innerHeight;
+                    if (itemTop < viewportHeight * 0.8) {
+                        item.classList.add('visible');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', showOnScroll);
+            showOnScroll(); // Pour s'assurer que les éléments visibles au chargement de la page sont également traités
+        });
+    </script>
+</body>
+</html>
